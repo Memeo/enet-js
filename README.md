@@ -34,7 +34,7 @@ You can basically do this:
     
     host.start_watcher();
     
-    var peer = host.host.connect(new enet.Address('a.b.c.d', 4331));
+    var peer = host.connect(new enet.Address('a.b.c.d', 4331));
     var packet = new enet.Packet('my message', enet.Packet.FLAG_RELIABLE);
     peer.send(0, packet); // channel number, packet.
     // Note that enet invalidates a packet when you send it, so `packet'

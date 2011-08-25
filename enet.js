@@ -101,4 +101,72 @@ Host.prototype.stop_watcher = function()
     }
 }
 
+// Now for some convenience methods, which just pass along to the native
+// host object.
+
+Host.prototype.connect = function()
+{
+    return this.host.connect.apply(this.host, arguments);
+}
+
+Host.prototype.broadcast = function()
+{
+    return this.host.broadcast.apply(this.host, arguments);
+}
+
+Host.prototype.address = function()
+{
+    return this.host.address();
+}
+
+Host.prototype.peerCount = function()
+{
+    return this.host.peerCount();
+}
+
+Host.prototype.channelLimit = function()
+{
+    return this.host.channelLimit();
+}
+
+Host.prototype.setChannelLimit = function(limit)
+{
+    return this.host.setChannelLimit(limit);
+}
+
+Host.prototype.incomingBandwidth = function()
+{
+    return this.host.incomingBandwidth();
+}
+
+Host.prototype.outgoingBandwidth = function()
+{
+    return this.host.outgoingBandwidth();
+}
+
+Host.prototype.setIncomingBandwidth = function(ibw)
+{
+    return this.host.setIncomingBandwidth(ibw);
+}
+
+Host.prototype.setOutgoingBandwidth = function(obw)
+{
+    return this.host.setOutgoingBandwidth(obw);
+}
+
+Host.prototype.flush = function()
+{
+    return this.host.flush();
+}
+
+Host.prototype.checkEvents = function()
+{
+    return this.host.checkEvents();
+}
+
+Host.prototype.service = function(timeout)
+{
+    return this.host.service(timeout);
+}
+
 module.exports.Host = Host;
