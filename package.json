@@ -1,0 +1,13 @@
+{
+    "name" : "enet",
+    "description" : "The enet networking library",
+    "url" : "http://memeo-inc.com/",
+    "keywords" : ["networking","peer-to-peer","enet"],
+    "author" : "Memeo, Inc",
+    "contributors" : ["Casey Marshall <casey.marshall@memeo-inc.com>"],
+    "dependencies" : {},
+    "version" : "0.0.1",
+    "main" : "./lib/enet",
+    "directories" : {},
+    "engines" : { "node" : ">=0.4.7" }
+}
