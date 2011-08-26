@@ -8,9 +8,7 @@ def set_options(opt):
 def configure(conf):
     import Options
     if Options.options.enet_prefix != None:
-        print "adding", os.path.join(Options.options.enet_prefix, "lib"), "to LINKFLAGS"
         conf.env.LINKFLAGS += ["-L" + os.path.join(Options.options.enet_prefix, "lib")]
-        print conf.env
     conf.check_tool("compiler_cxx")
     conf.check_tool("node_addon")
     conf.check(lib='enet', uselib_store='enet', mandatory=True)
