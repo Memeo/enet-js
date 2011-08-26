@@ -4,15 +4,16 @@ This is a Node wrapper for the [enet networking library](http://enet.bespin.org/
 
 ## Building
 
-First, install enet. If it's installed in a non-standard location, make a note of the prefix you used, calling it `ENET_PREFIX`. Also note the prefix you installed Node under, call that `NODE_PREFIX`.
+First, install enet. If it's installed in a non-standard location, make a note of the prefix you used, calling it `ENET_PREFIX`.
 
-Next, build enet.js:
+Then, build the module with `node-waf`:
 
-    make NODE_PREFIX=${NODE_PREFIX} CFLAGS=-I${ENET_PREFIX}/include LDFLAGS=-L${ENET_PREFIX}/lib
-    
-Now, copy `enet.js` and `enetnat.node` someplace that you can load them.
+    node-waf configure --enet-prefix=${ENET_PREFIX}
+    node-waf build --enet-prefix=${ENET_PREFIX}
 
-> _Building via `node-waf` will be supported as soon as I figure out how to modify the include and library search paths. Also we'll make sure things get installed right as a node package. We will get this done soon._
+Then, install `enetnat.node` and `enet.js` someplace that you can load from node.
+
+Making this a more proper node module is still to be done.
 
 ## Usage
 
