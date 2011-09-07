@@ -7,11 +7,10 @@ LDFLAGS =
 NODE_LDFLAGS = 
 LIBS = -lenet
 
-all: enet.node
-    
-enetnat.node: enetnat.o
-	$(CCLD) $(LDFLAGS) $(NODE_LDFLAGS) $(LIBS) -shared -o enetnat.node enetnat.o
-    
-enetnat.o: enet.cc
-	$(CXX) $(CFLAGS) $(NODE_CFLAGS) -c -o enetnat.o enet.cc
-    
+module:
+	mkdir -p node_modules
+	rm -rf node_modules/enet
+	mkdir -p node_modules/enet/lib
+	cp package.json node_modules/enet
+	cp enet.js node_modules/enet/lib
+	cp build/default/enetnat.node node_modules/enet/lib

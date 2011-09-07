@@ -6,7 +6,7 @@ var util = require('util');
 var timers = require('timers');
 var events = require('events');
 var IOWatcher = process.binding('io_watcher').IOWatcher;
-var enetnat = require('enetnat');
+var enetnat = require('./enetnat');
 
 module.exports.Address = enetnat.Address;
 module.exports.Peer = enetnat.Peer;
