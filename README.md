@@ -11,9 +11,11 @@ Then, build the module with `node-waf`:
     node-waf configure --enet-prefix=${ENET_PREFIX}
     node-waf build --enet-prefix=${ENET_PREFIX}
 
-Then, install `enetnat.node` and `enet.js` someplace that you can load from node.
+Then you can create a module directory via the makefile:
 
-Making this a more proper node module is still to be done.
+    make module
+
+You can then copy the directory `node_modules/enet` to your `node_modules` directory, e.g., `~/node_modules`. When running, make sure that `${ENET_PREFIX}/lib` is in your `LD_LIBRARY_PATH`.
 
 ## Usage
 
